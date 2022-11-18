@@ -1,0 +1,72 @@
+@import "./reset";
+@import "./variables";
+
+@mixin flex($justifyContent) {
+  display: flex;
+  align-items: center;
+  justify-content: $justifyContent;
+}
+
+.container {
+  width: 1170px;
+  height: 100vh;
+  margin: 0 auto;
+  padding-top: 67px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  header {
+    @include flex(space-between);
+    height: 40px;
+
+    .logo {
+      color: $primaryColor;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 31px;
+    }
+
+    nav {
+      @include flex(space-between);
+      column-gap: 29px;
+
+      ul {
+        @include flex(space-between);
+        column-gap: 35px;
+
+        li {
+          color: $secondaryColor;
+          font-size: 18px;
+          line-height: 26px;
+          font-weight: 500;
+
+          &:hover {
+            color: #888;
+            cursor: pointer;
+          }
+        }
+      }
+
+      button {
+        background-color: $btnColor;
+        color: white;
+        width: 100px;
+        height: 40px;
+        border-radius: 100px;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+      }
+    }
+  }
+
+  main {
+    @include flex(center);
+    margin-top: 119px;
+
+    .main-div {
+      height: 300px;
+      width: 300px;
+      background-color: red;
+    }
+  }
+}
